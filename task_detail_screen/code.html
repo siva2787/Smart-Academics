@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              display: ["Lexend"],
+            },
+            borderRadius: { DEFAULT: "0.25rem", lg: "0.5rem", xl: "0.75rem", full: "9999px" },
+          },
+        },
+      };
+    </script>
+<title>Generative Task</title>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-black dark:text-white">
+<div class="flex flex-col h-screen">
+<header class="flex items-center p-4 border-b border-background-light dark:border-background-dark/20 shadow-sm">
+<button class="p-2 rounded-full hover:bg-primary/10">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg">
+<path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path>
+</svg>
+</button>
+<h1 class="text-xl font-bold text-center flex-1 pr-10">Generative Task</h1>
+</header>
+<main class="flex-1 overflow-y-auto p-6 space-y-6">
+<div>
+<h2 class="text-lg font-bold">Prompt</h2>
+<p class="mt-2 text-black/70 dark:text-white/70">Generate a short story about a robot learning to feel emotions for the first time.</p>
+</div>
+<div>
+<h2 class="text-lg font-bold">Resources</h2>
+<div class="mt-2 space-y-3">
+<div class="flex items-center gap-4 p-3 rounded-lg bg-background-light dark:bg-background-dark/30 border border-black/10 dark:border-white/10">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 text-primary size-10 shrink-0">
+<span class="material-symbols-outlined">description</span>
+</div>
+<p class="flex-1 truncate font-medium">Example 1</p>
+</div>
+<div class="flex items-center gap-4 p-3 rounded-lg bg-background-light dark:bg-background-dark/30 border border-black/10 dark:border-white/10">
+<div class="flex items-center justify-center rounded-lg bg-primary/10 text-primary size-10 shrink-0">
+<span class="material-symbols-outlined">description</span>
+</div>
+<p class="flex-1 truncate font-medium">Example 2</p>
+</div>
+</div>
+</div>
+<div>
+<h2 class="text-lg font-bold">Your Response</h2>
+<div class="mt-2">
+<textarea class="form-textarea w-full resize-none rounded-lg bg-background-light dark:bg-background-dark/30 border border-black/10 dark:border-white/10 focus:ring-2 focus:ring-primary focus:border-primary min-h-48 p-4 placeholder:text-black/40 dark:placeholder:text-white/40" placeholder="Write your story here..."></textarea>
+</div>
+</div>
+</main>
+<footer class="p-4 border-t border-background-light dark:border-background-dark/20 bg-background-light dark:bg-background-dark">
+<div class="flex gap-4">
+<button class="flex-1 h-12 px-6 rounded-lg bg-primary/20 dark:bg-primary/30 text-primary font-bold">Save Progress</button>
+<button class="flex-1 h-12 px-6 rounded-lg bg-primary text-white font-bold">Submit</button>
+</div>
+</footer>
+<nav class="flex justify-around py-2 border-t border-black/10 dark:border-white/10 bg-background-light dark:bg-background-dark">
+<a class="flex flex-col items-center justify-center gap-1 text-black/60 dark:text-white/60" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<span class="text-xs font-medium">Attendance</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-black/60 dark:text-white/60" href="#">
+<span class="material-symbols-outlined">emoji_events</span>
+<span class="text-xs font-medium">Scorer</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-primary" href="#">
+<span class="material-symbols-outlined">checklist</span>
+<span class="text-xs font-bold">Tasks</span>
+</a>
+<a class="flex flex-col items-center justify-center gap-1 text-black/60 dark:text-white/60" href="#">
+<span class="material-symbols-outlined">person</span>
+<span class="text-xs font-medium">Profile</span>
+</a>
+</nav>
+</div>
+
+</body></html>

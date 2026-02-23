@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Attendance Scanner</title>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;700&amp;display=swap" rel="stylesheet"/>
+<script>
+        tailwind.config = {
+            darkMode: "class",
+            theme: {
+                extend: {
+                    colors: {
+                        "primary": "#137fec",
+                        "background-light": "#f6f7f8",
+                        "background-dark": "#101922",
+                        "text-light": "#1f2937",
+                        "text-dark": "#f3f4f6",
+                    },
+                    fontFamily: {
+                        "display": ["Lexend", "sans-serif"]
+                    },
+                    borderRadius: {
+                        "DEFAULT": "0.25rem",
+                        "lg": "0.5rem",
+                        "xl": "0.75rem",
+                        "full": "9999px"
+                    },
+                },
+            },
+        }
+    </script>
+<style>
+        .qr-scanner-overlay {
+            position: relative;
+            width: 100%;
+            padding-top: 100%;overflow: hidden;
+            border-radius: 0.75rem;}
+        .qr-scanner-overlay::before {
+            content: '';
+            position: absolute;
+            inset: 0;
+            background: conic-gradient(from 90deg at 1px 1px, #0000 90deg, currentColor 0) 0 0 / 50% 50% repeat;
+            -webkit-mask: conic-gradient(from 90deg at 1px 1px, #0000 90deg, #fff 0) 0 0 / 50% 50% repeat;
+                          mask: conic-gradient(from 90deg at 1px 1px, #0000 90deg, #fff 0) 0 0 / 50% 50% repeat;
+            animation: rotate 4s infinite linear;
+            color: #137fec;opacity: 0.5;
+        }
+        .qr-scanner-line {
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 2px;
+            background: #137fec;box-shadow: 0 0 10px #137fec, 0 0 20px #137fec;
+            animation: scan 2s infinite ease-in-out;
+        }
+        @keyframes rotate {
+            100% {
+                transform: rotate(360deg);
+            }
+        }
+        @keyframes scan {
+            0%, 100% {
+                transform: translateY(0);
+            }
+            50% {
+                transform: translateY(100%);
+            }
+        }
+    </style>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display">
+<div class="flex flex-col h-screen justify-between">
+<main class="flex-grow">
+<header class="p-4 flex items-center justify-between">
+<button class="text-text-light dark:text-text-dark">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M224,128a8,8,0,0,1-8,8H59.31l58.35,58.34a8,8,0,0,1-11.32,11.32l-72-72a8,8,0,0,1,0-11.32l72-72a8,8,0,0,1,11.32,11.32L59.31,120H216A8,8,0,0,1,224,128Z"></path></svg>
+</button>
+<h1 class="text-lg font-bold text-text-light dark:text-text-dark absolute left-1/2 -translate-x-1/2">Attendance</h1>
+</header>
+<div class="p-4 flex flex-col items-center">
+<h2 class="text-xl font-bold text-text-light dark:text-text-dark mb-4">Scan QR Code</h2>
+<div class="w-full max-w-sm">
+<div class="qr-scanner-overlay bg-primary/10 dark:bg-primary/20">
+<div class="absolute inset-0 flex items-center justify-center">
+<svg class="text-primary opacity-30" fill="currentColor" height="64" viewBox="0 0 256 256" width="64" xmlns="http://www.w3.org/2000/svg"><path d="M168,48H152V32a8,8,0,0,0-16,0V48H120V32a8,8,0,0,0-16,0V48H88a8,8,0,0,0-8,8v8H64a8,8,0,0,0-8,8v8H40a8,8,0,0,0-8,8v16a8,8,0,0,0,8,8h8v8a8,8,0,0,0,8,8h8v16a8,8,0,0,0,8,8H88v16a8,8,0,0,0,16,0V192h16v16a8,8,0,0,0,16,0V192h16v16a8,8,0,0,0,16,0V192h16a8,8,0,0,0,8-8V168h8a8,8,0,0,0,8-8V144h8a8,8,0,0,0,8-8V120a8,8,0,0,0-8-8h-8V96a8,8,0,0,0-8-8h-8V72a8,8,0,0,0-8-8Zm-8,136H88V80h80ZM208,96h-8v8a8,8,0,0,0,16,0v-8Zm0,32h-8v16h8Zm-40,48v8h8V176Zm-72-88H80V96h16Zm16,16H96v16h16Zm16-16h16V96H128Zm16,16v16H128V128Zm16,16h16v16H144Zm0,32H128v16h16Zm-16,16v16h16V176Z"></path></svg>
+</div>
+<div class="qr-scanner-line"></div>
+</div>
+</div>
+<p class="text-sm text-text-light/70 dark:text-text-dark/70 mt-4">Place the QR code inside the frame</p>
+</div>
+<div class="px-4 py-2 flex items-center justify-center">
+<span class="text-sm text-text-light dark:text-text-dark mr-3">Can't scan?</span>
+<button class="font-bold text-primary">
+                Enter Code Manually
+            </button>
+</div>
+<div class="px-4 py-6 text-center">
+<div class="inline-flex items-center gap-3 bg-primary/10 dark:bg-primary/20 text-green-600 dark:text-green-400 font-bold py-3 px-6 rounded-full">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M229.66,77.66l-128,128a8,8,0,0,1-11.32,0l-56-56a8,8,0,0,1,11.32-11.32L96,188.69,218.34,66.34a8,8,0,0,1,11.32,11.32Z"></path></svg>
+<span>Status: <span class="text-text-light dark:text-text-dark">Present</span></span>
+</div>
+</div>
+</main>
+<footer class="border-t border-primary/20 bg-background-light dark:bg-background-dark/50 backdrop-blur-sm">
+<nav class="flex justify-around p-2">
+<a class="flex flex-col items-center gap-1 p-2 rounded-lg text-primary" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M208,32H184V24a8,8,0,0,0-16,0v8H88V24a8,8,0,0,0-16,0v8H48A16,16,0,0,0,32,48V208a16,16,0,0,0,16,16H208a16,16,0,0,0,16-16V48A16,16,0,0,0,208,32Zm0,176H48V88H208Z"></path></svg>
+<span class="text-xs font-medium">Attendance</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 rounded-lg text-text-light/50 dark:text-text-dark/50 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M232,64H208V56a16,16,0,0,0-16-16H64A16,16,0,0,0,48,56v8H24A16,16,0,0,0,8,80V96a40,40,0,0,0,40,40h3.65A80.13,80.13,0,0,0,120,191.61V216H96a8,8,0,0,0,0,16h64a8,8,0,0,0,0-16H136V191.58c31.94-3.23,58.44-25.64,68.08-55.58H208a40,40,0,0,0,40-40V80A16,16,0,0,0,232,64ZM48,120A24,24,0,0,1,24,96V80H48v32q0,4,.39,8Zm144-8.9c0,35.52-28.49,64.64-63.51,64.9H128a64,64,0,0,1-64-64V56H192ZM232,96a24,24,0,0,1-24,24h-.5a81.81,81.81,0,0,0,.5-8.9V80h24Z"></path></svg>
+<span class="text-xs font-medium">Scores</span>
+</a>
+<a class="flex flex-col items-center gap-1 p-2 rounded-lg text-text-light/50 dark:text-text-dark/50 hover:text-primary dark:hover:text-primary transition-colors" href="#">
+<svg fill="currentColor" height="24" viewBox="0 0 256 256" width="24" xmlns="http://www.w3.org/2000/svg"><path d="M230.92,212c-15.23-26.33-38.7-45.21-66.09-54.16a72,72,0,1,0-73.66,0C63.78,166.78,40.31,185.66,25.08,212a8,8,0,1,0,13.85,8c18.84-32.56,52.14-52,89.07-52s70.23,19.44,89.07,52a8,8,0,1,0,13.85-8ZM72,96a56,56,0,1,1,56,56A56.06,56.06,0,0,1,72,96Z"></path></svg>
+<span class="text-xs font-medium">Profile</span>
+</a>
+</nav>
+</footer>
+</div>
+
+
+</body></html>

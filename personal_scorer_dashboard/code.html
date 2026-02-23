@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<meta content="width=device-width, initial-scale=1.0" name="viewport"/>
+<title>Student Dashboard</title>
+<link href="https://fonts.googleapis.com" rel="preconnect"/>
+<link crossorigin="" href="https://fonts.gstatic.com" rel="preconnect"/>
+<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;500;600;700&amp;display=swap" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              primary: "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              display: ["Lexend"],
+            },
+            borderRadius: {
+              DEFAULT: "0.25rem",
+              lg: "0.5rem",
+              xl: "0.75rem",
+              full: "9999px",
+            },
+          },
+        },
+      };
+    </script>
+<style>
+      .material-symbols-outlined {
+        font-variation-settings: "FILL" 1, "wght" 400, "GRAD" 0, "opsz" 24;
+      }
+    </style>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="font-display bg-background-light dark:bg-background-dark text-black/90 dark:text-white/90">
+<div class="flex h-screen flex-col">
+<header class="flex items-center p-4">
+<button class="flex h-10 w-10 items-center justify-center rounded-full bg-black/5 dark:bg-white/5">
+<span class="material-symbols-outlined text-black/60 dark:text-white/60">menu</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold">Dashboard</h1>
+<div class="w-10"></div>
+</header>
+<main class="flex-1 overflow-y-auto px-4 pb-24">
+<div class="flex flex-col gap-8">
+<section class="flex items-center gap-4">
+<div class="h-16 w-16 shrink-0 rounded-full bg-cover bg-center" style='background-image: url("https://lh3.googleusercontent.com/aida-public/AB6AXuBnwjZbJiH-uwMJmVGevOMebTv3q8cUUvLxaBpBMySsN8znNAe77b1ycIxLVj6KJdSgPVst_wHXp38XPBcYYJZvCxnPVMHqTSJtwvJv7Ic64wgN2nP15e06f9j6QTED9HlySbEhn0dp1MhbC0CvlUyB1qGWQZohVHfSppK62vq8U0Ki1igNZhFyUww6jeq9aVmHUs2GpSG_OFvSXRbv9KBqrMY0-hzMFkTrA5XmdJgzEyM_kSs1KQWahoCN1Mp_1o0E2to7sKjrfLAn");'></div>
+<div>
+<p class="text-xl font-bold">Sophia Chen</p>
+<p class="text-sm text-black/60 dark:text-white/60">ID: 123456</p>
+</div>
+</section>
+<section class="rounded-xl bg-primary p-6 text-white">
+<p class="text-sm font-medium opacity-80">Overall Score</p>
+<p class="text-4xl font-bold">92%</p>
+</section>
+<section>
+<h2 class="text-xl font-bold">Score Breakdown</h2>
+<div class="mt-4 flex flex-col gap-4 rounded-xl bg-black/5 p-4 dark:bg-white/5">
+<div class="grid grid-cols-[auto_1fr_auto] items-center gap-x-3">
+<p class="text-sm font-medium text-black/60 dark:text-white/60">Math</p>
+<div class="h-2 w-full rounded-full bg-black/10 dark:bg-white/10">
+<div class="h-2 w-[88%] rounded-full bg-primary"></div>
+</div>
+<p class="text-sm font-bold">88%</p>
+</div>
+<div class="grid grid-cols-[auto_1fr_auto] items-center gap-x-3">
+<p class="text-sm font-medium text-black/60 dark:text-white/60">Science</p>
+<div class="h-2 w-full rounded-full bg-black/10 dark:bg-white/10">
+<div class="h-2 w-[95%] rounded-full bg-primary"></div>
+</div>
+<p class="text-sm font-bold">95%</p>
+</div>
+<div class="grid grid-cols-[auto_1fr_auto] items-center gap-x-3">
+<p class="text-sm font-medium text-black/60 dark:text-white/60">History</p>
+<div class="h-2 w-full rounded-full bg-black/10 dark:bg-white/10">
+<div class="h-2 w-[91%] rounded-full bg-primary"></div>
+</div>
+<p class="text-sm font-bold">91%</p>
+</div>
+<div class="grid grid-cols-[auto_1fr_auto] items-center gap-x-3">
+<p class="text-sm font-medium text-black/60 dark:text-white/60">English</p>
+<div class="h-2 w-full rounded-full bg-black/10 dark:bg-white/10">
+<div class="h-2 w-[94%] rounded-full bg-primary"></div>
+</div>
+<p class="text-sm font-bold">94%</p>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-xl font-bold">Progress Over Time</h2>
+<div class="mt-4 rounded-xl bg-black/5 p-4 dark:bg-white/5">
+<svg fill="none" height="150" preserveAspectRatio="none" viewBox="0 0 472 150" width="100%" xmlns="http://www.w3.org/2000/svg">
+<path d="M0 109 C 18.15 109 18.15 21 36.3 21 C 54.46 21 54.46 41 72.61 41 C 90.76 41 90.76 93 108.92 93 C 127.07 93 127.07 33 145.23 33 C 163.38 33 163.38 101 181.53 101 C 199.69 101 199.69 61 217.84 61 C 236 61 236 45 254.15 45 C 272.3 45 272.3 121 290.46 121 C 308.61 121 308.61 149 326.76 149 C 344.92 149 344.92 1 363.07 1 C 381.23 1 381.23 81 399.38 81 C 417.53 81 417.53 129 435.69 129 C 453.84 129 453.84 25 472 25" stroke="#137fec" stroke-linecap="round" stroke-width="3"></path>
+<path d="M0 109 C 18.15 109 18.15 21 36.3 21 C 54.46 21 54.46 41 72.61 41 C 90.76 41 90.76 93 108.92 93 C 127.07 93 127.07 33 145.23 33 C 163.38 33 163.38 101 181.53 101 C 199.69 101 199.69 61 217.84 61 C 236 61 236 45 254.15 45 C 272.3 45 272.3 121 290.46 121 C 308.61 121 308.61 149 326.76 149 C 344.92 149 344.92 1 363.07 1 C 381.23 1 381.23 81 399.38 81 C 417.53 81 417.53 129 435.69 129 C 453.84 129 453.84 25 472 25 V 150 H 0 Z" fill="url(#chartGradient)"></path>
+<defs>
+<linearGradient gradientUnits="userSpaceOnUse" id="chartGradient" x1="236" x2="236" y1="0" y2="150">
+<stop stop-color="#137fec" stop-opacity="0.2"></stop>
+<stop offset="1" stop-color="#137fec" stop-opacity="0"></stop>
+</linearGradient>
+</defs>
+</svg>
+<div class="mt-2 flex justify-between text-xs font-medium text-black/60 dark:text-white/60">
+<span>Week 1</span>
+<span>Week 2</span>
+<span>Week 3</span>
+<span>Week 4</span>
+</div>
+</div>
+</section>
+<section>
+<h2 class="text-xl font-bold">Recent Tasks</h2>
+<div class="mt-4 flex flex-col gap-2">
+<div class="flex items-center gap-4 rounded-xl bg-black/5 p-3 dark:bg-white/5">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+<span class="material-symbols-outlined text-primary">description</span>
+</div>
+<div>
+<p class="font-semibold">Math Assignment</p>
+<p class="text-sm text-black/60 dark:text-white/60">Due: Tomorrow, 11:59 PM</p>
+</div>
+</div>
+<div class="flex items-center gap-4 rounded-xl bg-black/5 p-3 dark:bg-white/5">
+<div class="flex h-12 w-12 shrink-0 items-center justify-center rounded-lg bg-primary/10">
+<span class="material-symbols-outlined text-primary">science</span>
+</div>
+<div>
+<p class="font-semibold">Science Project</p>
+<p class="text-sm text-black/60 dark:text-white/60">Due: In 3 days</p>
+</div>
+</div>
+</div>
+</section>
+</div>
+</main>
+<nav class="fixed bottom-0 left-0 right-0 border-t border-black/10 bg-background-light/80 backdrop-blur-lg dark:border-white/10 dark:bg-background-dark/80">
+<div class="flex justify-around px-2 pb-safe-bottom">
+<a class="flex flex-col items-center gap-1 py-2 text-black/60 dark:text-white/60" href="#">
+<span class="material-symbols-outlined text-2xl">event</span>
+<span class="text-xs font-medium">Attendance</span>
+</a>
+<a class="flex flex-col items-center gap-1 rounded-full py-2 text-primary" href="#">
+<span class="material-symbols-outlined text-2xl">emoji_events</span>
+<span class="text-xs font-bold">Scores</span>
+</a>
+<a class="flex flex-col items-center gap-1 py-2 text-black/60 dark:text-white/60" href="#">
+<span class="material-symbols-outlined text-2xl">checklist</span>
+<span class="text-xs font-medium">Tasks</span>
+</a>
+<a class="flex flex-col items-center gap-1 py-2 text-black/60 dark:text-white/60" href="#">
+<span class="material-symbols-outlined text-2xl">person</span>
+<span class="text-xs font-medium">Profile</span>
+</a>
+</div>
+<div class="h-5 bg-background-light dark:bg-background-dark"></div>
+</nav>
+</div>
+
+</body></html>

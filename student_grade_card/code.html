@@ -1,0 +1,155 @@
+<!DOCTYPE html>
+<html lang="en"><head>
+<meta charset="utf-8"/>
+<link crossorigin="" href="https://fonts.gstatic.com/" rel="preconnect"/>
+<link as="style" href="https://fonts.googleapis.com/css2?display=swap&amp;family=Lexend%3Awght%40400%3B500%3B700%3B900&amp;family=Noto+Sans%3Awght%40400%3B500%3B700%3B900" onload="this.rel='stylesheet'" rel="stylesheet"/>
+<script src="https://cdn.tailwindcss.com?plugins=forms,container-queries"></script>
+<link href="https://fonts.googleapis.com/css2?family=Material+Symbols+Outlined" rel="stylesheet"/>
+<title>Stitch Design</title>
+<link href="data:image/x-icon;base64," rel="icon" type="image/x-icon"/>
+<script>
+      tailwind.config = {
+        darkMode: "class",
+        theme: {
+          extend: {
+            colors: {
+              "primary": "#137fec",
+              "background-light": "#f6f7f8",
+              "background-dark": "#101922",
+            },
+            fontFamily: {
+              "display": ["Lexend"]
+            },
+            borderRadius: { "DEFAULT": "0.25rem", "lg": "0.5rem", "xl": "0.75rem", "full": "9999px" },
+          },
+        },
+      }
+    </script>
+<style>
+    body {
+      min-height: max(884px, 100dvh);
+    }
+  </style>
+  </head>
+<body class="bg-background-light dark:bg-background-dark font-display text-gray-800 dark:text-gray-200">
+<div class="relative flex h-auto min-h-screen w-full flex-col">
+<div class="flex-1 pb-24">
+<header class="sticky top-0 z-10 flex items-center justify-between border-b border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark p-4">
+<button class="flex items-center justify-center">
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200">arrow_back_ios_new</span>
+</button>
+<h1 class="flex-1 text-center text-lg font-bold">Grade Card</h1>
+<div class="w-8"></div>
+</header>
+<main class="p-4">
+<section class="mb-6 rounded-xl bg-gray-100 dark:bg-gray-800 p-4">
+<div class="flex items-center justify-between mb-2">
+<h2 class="text-base font-semibold">Overall Grade</h2>
+<span class="text-base font-bold text-primary">A-</span>
+</div>
+<div class="flex items-center gap-4">
+<div class="h-2 flex-1 rounded-full bg-gray-300 dark:bg-gray-700">
+<div class="h-2 rounded-full bg-primary" style="width: 85%;"></div>
+</div>
+<span class="text-sm font-medium">85/100</span>
+</div>
+</section>
+<section class="mb-6">
+<h3 class="text-base font-semibold mb-3">Filter</h3>
+<div class="flex gap-2">
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-full bg-primary/10 dark:bg-primary/20 px-4">
+<p class="text-sm font-medium text-primary">Subject</p>
+<span class="material-symbols-outlined text-primary text-base">expand_more</span>
+</button>
+<button class="flex h-10 items-center justify-center gap-x-2 rounded-full bg-gray-200 dark:bg-gray-700 px-4">
+<p class="text-sm font-medium text-gray-800 dark:text-gray-200">Grading Period</p>
+<span class="material-symbols-outlined text-gray-800 dark:text-gray-200 text-base">expand_more</span>
+</button>
+</div>
+</section>
+<div class="space-y-4">
+<div>
+<h3 class="text-lg font-bold mb-3">Assignments</h3>
+<div class="space-y-2">
+<div class="flex items-center justify-between rounded-lg bg-gray-100 dark:bg-gray-800 p-3">
+<div>
+<p class="font-medium">Essay on Modern Literature</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Due: 10/20/2024</p>
+</div>
+<p class="font-semibold text-primary">90/100</p>
+</div>
+<div class="flex items-center justify-between rounded-lg bg-gray-100 dark:bg-gray-800 p-3">
+<div>
+<p class="font-medium">Research Paper on Climate Change</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Due: 10/15/2024</p>
+</div>
+<p class="font-semibold text-primary">80/100</p>
+</div>
+<div class="flex items-center justify-between rounded-lg bg-gray-100 dark:bg-gray-800 p-3">
+<div>
+<p class="font-medium">Presentation on Renewable Energy</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Due: 10/10/2024</p>
+</div>
+<p class="font-semibold text-primary">75/100</p>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-3">Quizzes</h3>
+<div class="space-y-2">
+<div class="flex items-center justify-between rounded-lg bg-gray-100 dark:bg-gray-800 p-3">
+<div>
+<p class="font-medium">Quiz on Chapter 5</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Date: 10/25/2024</p>
+</div>
+<p class="font-semibold text-primary">85/100</p>
+</div>
+<div class="flex items-center justify-between rounded-lg bg-gray-100 dark:bg-gray-800 p-3">
+<div>
+<p class="font-medium">Quiz on Chapter 4</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Date: 10/20/2024</p>
+</div>
+<p class="font-semibold text-primary">90/100</p>
+</div>
+</div>
+</div>
+<div>
+<h3 class="text-lg font-bold mb-3">Exams</h3>
+<div class="space-y-2">
+<div class="flex items-center justify-between rounded-lg bg-gray-100 dark:bg-gray-800 p-3">
+<div>
+<p class="font-medium">Midterm Exam</p>
+<p class="text-sm text-gray-500 dark:text-gray-400">Date: 11/15/2024</p>
+</div>
+<p class="font-semibold text-primary">80/100</p>
+</div>
+</div>
+</div>
+</div>
+</main>
+</div>
+<footer class="fixed bottom-0 left-0 right-0 border-t border-gray-200 dark:border-gray-800 bg-background-light dark:bg-background-dark">
+<nav class="flex justify-around px-4 pt-2 pb-4">
+<a class="flex flex-col items-center justify-end gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">calendar_today</span>
+<p class="text-xs font-medium">Attendance</p>
+</a>
+<a class="flex flex-1 flex-col items-center justify-end gap-1 text-primary" href="#">
+<div class="relative">
+<span class="material-symbols-outlined text-3xl">workspace_premium</span>
+</div>
+<p class="text-xs font-medium">Scorer</p>
+</a>
+<a class="flex flex-col items-center justify-end gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">checklist</span>
+<p class="text-xs font-medium">Tasks</p>
+</a>
+<a class="flex flex-col items-center justify-end gap-1 text-gray-500 dark:text-gray-400" href="#">
+<span class="material-symbols-outlined">person</span>
+<p class="text-xs font-medium">Profile</p>
+</a>
+</nav>
+</footer>
+</div>
+
+</body></html>
